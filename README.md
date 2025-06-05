@@ -27,7 +27,6 @@ Website komunitas gaming dengan teknologi PWA yang dapat diinstall di desktop, i
 Tambahkan environment variables berikut di Railway dashboard:
 
 ```
-NODE_ENV=production
 VITE_FIREBASE_API_KEY=AIzaSyBlHomdlq0ziskwGtE9CRyjA84r85vRD9A
 VITE_FIREBASE_AUTH_DOMAIN=nomercy-ea37a.firebaseapp.com
 VITE_FIREBASE_PROJECT_ID=nomercy-ea37a
@@ -38,13 +37,19 @@ VITE_FIREBASE_MEASUREMENT_ID=G-GRKR34WSFW
 ```
 
 ### 4. Railway Configuration
-Railway akan otomatis menggunakan konfigurasi dari `railway.json` yang sudah disediakan.
+Railway akan menggunakan command `npm run dev` untuk menjalankan aplikasi. Konfigurasi sudah dioptimalkan untuk deployment yang stable.
 
 ### 5. Firebase Setup
 1. Buka [Firebase Console](https://console.firebase.google.com/)
 2. Pilih project "nomercy-ea37a"
 3. Di Authentication → Settings → Authorized domains
 4. Tambahkan domain Railway Anda (contoh: `yourapp.railway.app`)
+
+### Troubleshooting
+Jika mengalami error deployment:
+1. Pastikan semua environment variables sudah ditambahkan
+2. Redeploy project di Railway dashboard
+3. Check logs di Railway untuk error detail
 
 ## Development
 
