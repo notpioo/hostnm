@@ -14,7 +14,8 @@ import {
   Zap,
   Calendar,
   UserCheck,
-  MessageCircle
+  MessageCircle,
+  User
 } from "lucide-react";
 
 export default function Dashboard() {

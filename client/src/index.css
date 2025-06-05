@@ -75,7 +75,7 @@
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-primary to-orange-secondary text-primary-foreground;
+    @apply bg-gradient-to-r from-primary to-orange-500 text-primary-foreground;
     transition: all 0.3s ease;
   }
   

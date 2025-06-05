@@ -1,0 +1,24 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="512" height="512" rx="64" fill="#0F1419"/>
+<rect x="32" y="32" width="448" height="448" rx="32" fill="url(#gradient)"/>
+<!-- Skull icon representing NoMercy gaming theme -->
+<path d="M256 128C231.909 128 212 147.909 212 172V212C212 230.778 227.222 246 246 246H266C284.778 246 300 230.778 300 212V172C300 147.909 280.091 128 256 128Z" fill="#FF6B35"/>
+<path d="M192 256C173.222 256 158 271.222 158 290V364C158 382.778 173.222 398 192 398H234C252.778 398 268 382.778 268 364V290C268 271.222 252.778 256 234 256H192Z" fill="#FF6B35"/>
+<path d="M278 256C259.222 256 244 271.222 244 290V364C244 382.778 259.222 398 278 398H320C338.778 398 354 382.778 354 364V290C354 271.222 338.778 256 320 256H278Z" fill="#FF6B35"/>
+<!-- Eyes -->
+<circle cx="226" cy="202" r="16" fill="#1A202C"/>
+<circle cx="286" cy="202" r="16" fill="#1A202C"/>
+<!-- Nose -->
+<path d="M256 234L240 266L272 266Z" fill="#1A202C"/>
+<!-- Gaming controller accent -->
+<rect x="200" y="340" width="32" height="8" rx="4" fill="#FF6B35"/>
+<rect x="280" y="340" width="32" height="8" rx="4" fill="#FF6B35"/>
+<circle cx="216" cy="320" r="6" fill="#FF6B35"/>
+<circle cx="296" cy="320" r="6" fill="#FF6B35"/>
+<defs>
+<linearGradient id="gradient" x1="256" y1="32" x2="256" y2="480" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2D3748"/>
+<stop offset="1" stop-color="#1A202C"/>
+</linearGradient>
+</defs>
+</svg>
