@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 40% 7%; /* #0F1419 - Dark blue-gray */
+  --foreground: 210 40% 98%; /* #F7FAFC - Light gray */
+  --muted: 210 40% 15%; /* #1A202C - Dark gray */
+  --muted-foreground: 210 40% 64%; /* #A0ADB8 - Medium gray */
+  --popover: 210 40% 10%; /* #151A23 - Darker gray */
+  --popover-foreground: 210 40% 98%; /* #F7FAFC - Light gray */
+  --card: 210 40% 12%; /* #1A1F2E - Card background */
+  --card-foreground: 210 40% 98%; /* #F7FAFC - Light gray */
+  --border: 210 40% 18%; /* #2D3748 - Border gray */
+  --input: 210 40% 18%; /* #2D3748 - Input background */
+  --primary: 16 100% 60%; /* #FF6B35 - Orange */
+  --primary-foreground: 210 40% 98%; /* #F7FAFC - Light text on orange */
+  --secondary: 210 40% 18%; /* #2D3748 - Secondary gray */
+  --secondary-foreground: 210 40% 98%; /* #F7FAFC - Light gray */
+  --accent: 210 40% 20%; /* #374151 - Accent gray */
+  --accent-foreground: 210 40% 98%; /* #F7FAFC - Light gray */
+  --destructive: 0 84% 60%; /* #E53E3E - Red */
+  --destructive-foreground: 210 40% 98%; /* #F7FAFC - Light text on red */
+  --ring: 16 100% 60%; /* #FF6B35 - Orange ring */
+  --radius: 0.5rem;
+  
+  /* Gaming theme colors */
+  --orange-primary: 16 100% 60%; /* #FF6B35 */
+  --orange-secondary: 22 100% 70%; /* #FF8A65 */
+  --gray-dark: 210 40% 7%; /* #0F1419 */
+  --gray-medium: 210 40% 18%; /* #2D3748 */
+  --gray-light: 210 40% 64%; /* #A0ADB8 */
+}
+
+.dark {
+  --background: 210 40% 7%; /* #0F1419 */
+  --foreground: 210 40% 98%; /* #F7FAFC */
+  --muted: 210 40% 15%; /* #1A202C */
+  --muted-foreground: 210 40% 64%; /* #A0ADB8 */
+  --popover: 210 40% 10%; /* #151A23 */
+  --popover-foreground: 210 40% 98%; /* #F7FAFC */
+  --card: 210 40% 12%; /* #1A1F2E */
+  --card-foreground: 210 40% 98%; /* #F7FAFC */
+  --border: 210 40% 18%; /* #2D3748 */
+  --input: 210 40% 18%; /* #2D3748 */
+  --primary: 16 100% 60%; /* #FF6B35 */
+  --primary-foreground: 210 40% 98%; /* #F7FAFC */
+  --secondary: 210 40% 18%; /* #2D3748 */
+  --secondary-foreground: 210 40% 98%; /* #F7FAFC */
+  --accent: 210 40% 20%; /* #374151 */
+  --accent-foreground: 210 40% 98%; /* #F7FAFC */
+  --destructive: 0 84% 60%; /* #E53E3E */
+  --destructive-foreground: 210 40% 98%; /* #F7FAFC */
+  --ring: 16 100% 60%; /* #FF6B35 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-md bg-card/80 border border-border/50;
+  }
+  
+  .glow-orange {
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-orange-secondary text-primary-foreground;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    @apply shadow-lg transform scale-105;
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+  }
+  
+  .gaming-card {
+    @apply bg-gradient-to-br from-card to-muted border border-border/50 rounded-xl;
+  }
+  
+  .input-gaming {
+    @apply bg-input border-2 border-border text-foreground placeholder:text-muted-foreground;
+    transition: all 0.3s ease;
+  }
+  
+  .input-gaming:focus {
+    @apply border-primary ring-2 ring-primary/20 outline-none;
+  }
+  
+  .text-orange {
+    color: hsl(var(--primary));
+  }
+  
+  .bg-orange {
+    background-color: hsl(var(--primary));
+  }
+  
+  .slide-in {
+    animation: slideIn 0.6s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* PWA Install prompt styling */
+.pwa-install-prompt {
+  @apply fixed top-4 right-4 z-50 glass-effect p-4 rounded-lg shadow-xl max-w-sm;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
