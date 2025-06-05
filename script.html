@@ -1,0 +1,72 @@
+// PWA Installation
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
+
+// Service Worker Registration
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', async () => {
+        try {
+            const registration = await navigator.serviceWorker.register('/sw.js');
+            console.log('SW registered: ', registration);
+        } catch (registrationError) {
+            console.log('SW registration failed: ', registrationError);
+        }
+    });
+}
+
+// PWA Install Prompt
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = 'inline-block';
+    
+    installBtn.addEventListener('click', async () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log(`User response to the install prompt: ${outcome}`);
+            deferredPrompt = null;
+            installBtn.style.display = 'none';
+        }
+    });
+});
+
+// Handle successful installation
+window.addEventListener('appinstalled', (evt) => {
+    console.log('App was installed successfully');
+    installBtn.style.display = 'none';
+});
+
+// Button Event Listeners
+document.getElementById('joinCommunityBtn').addEventListener('click', () => {
+    // Simulate join community action
+    alert('Welcome to NoMercy Gaming Community! 🎮');
+});
+
+document.getElementById('signInBtn').addEventListener('click', () => {
+    // Simulate sign in action
+    alert('Sign in feature coming soon! ⚡');
+});
+
+// Smooth scrolling and animations
+document.addEventListener('DOMContentLoaded', () => {
+    // Add entrance animations
+    const heroSection = document.querySelector('.hero-section');
+    heroSection.style.opacity = '0';
+    heroSection.style.transform = 'translateY(50px)';
+    
+    setTimeout(() => {
+        heroSection.style.transition = 'all 0.8s ease-out';
+        heroSection.style.opacity = '1';
+        heroSection.style.transform = 'translateY(0)';
+    }, 100);
+});
+
+// Handle online/offline status
+window.addEventListener('online', () => {
+    console.log('App is online');
+});
+
+window.addEventListener('offline', () => {
+    console.log('App is offline');
+});

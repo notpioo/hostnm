@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoMercy - Gaming Community Platform</title>
+    <meta name="description" content="Join the ultimate gaming community. Connect with fellow gamers, share strategies, and dominate together.">
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a202c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NoMercy">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🎮</span>
+                <span class="logo-text">NoMercy</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Login</a>
+                <button class="nav-btn">Join Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="hero-section">
+            <div class="hero-badge">
+                <span class="badge-icon">🎮</span>
+                <span>Gaming Community Platform</span>
+            </div>
+            
+            <h1 class="hero-title">NoMercy</h1>
+            
+            <p class="hero-description">
+                Join the ultimate gaming community. Connect with fellow gamers, share strategies, and dominate together.
+            </p>
+            
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="joinCommunityBtn">
+                    <span class="btn-icon">👥</span>
+                    Join the Community
+                </button>
+                <button class="btn btn-secondary" id="signInBtn">
+                    <span class="btn-icon">⚡</span>
+                    Sign In
+                </button>
+            </div>
+            
+            <div class="install-prompt">
+                <span class="install-icon">📱</span>
+                <span>Available on all platforms - Install as an app!</span>
+                <button class="install-btn" id="installBtn" style="display: none;">Install App</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
