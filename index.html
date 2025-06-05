@@ -20,6 +20,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Install Banner (muncul di atas) -->
+    <div class="install-banner" id="installBanner" style="display: none;">
+        <div class="install-banner-content">
+            <div class="install-banner-info">
+                <span class="install-banner-icon">📱</span>
+                <div class="install-banner-text">
+                    <strong>Install NoMercy App</strong>
+                    <span>Get the full experience on your device</span>
+                </div>
+            </div>
+            <div class="install-banner-actions">
+                <button class="install-banner-btn" id="installBannerBtn">Install</button>
+                <button class="install-banner-close" id="closeBannerBtn">✕</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -31,6 +48,11 @@
                 <a href="#" class="nav-link">Home</a>
                 <a href="#" class="nav-link">Login</a>
                 <button class="nav-btn">Join Now</button>
+                <!-- Install button di navbar -->
+                <button class="install-nav-btn" id="installNavBtn" style="display: none;">
+                    <span>⬇️</span>
+                    Install App
+                </button>
             </div>
         </div>
     </nav>
@@ -60,13 +82,68 @@
                 </button>
             </div>
             
-            <div class="install-prompt">
-                <span class="install-icon">📱</span>
-                <span>Available on all platforms - Install as an app!</span>
-                <button class="install-btn" id="installBtn" style="display: none;">Install App</button>
+            <!-- Install section yang lebih prominent -->
+            <div class="install-section">
+                <div class="install-card" id="installCard" style="display: none;">
+                    <div class="install-card-header">
+                        <span class="install-card-icon">📱</span>
+                        <h3>Install NoMercy App</h3>
+                    </div>
+                    <p class="install-card-desc">
+                        Get the full gaming experience with our PWA app. Works offline and feels native!
+                    </p>
+                    <button class="btn btn-install" id="installMainBtn">
+                        <span class="btn-icon">⬇️</span>
+                        Install Now
+                    </button>
+                </div>
+                
+                <div class="install-prompt">
+                    <span class="install-icon">📱</span>
+                    <span>Available on all platforms - Install as an app!</span>
+                </div>
             </div>
         </div>
     </main>
+
+    <!-- Floating Install Button -->
+    <button class="floating-install-btn" id="floatingInstallBtn" style="display: none;">
+        <span class="floating-install-icon">⬇️</span>
+        <span class="floating-install-text">Install App</span>
+    </button>
+
+    <!-- Install Modal -->
+    <div class="install-modal" id="installModal" style="display: none;">
+        <div class="install-modal-overlay" id="installModalOverlay"></div>
+        <div class="install-modal-content">
+            <div class="install-modal-header">
+                <h3>Install NoMercy Gaming</h3>
+                <button class="install-modal-close" id="closeModalBtn">✕</button>
+            </div>
+            <div class="install-modal-body">
+                <div class="install-modal-icon">🎮</div>
+                <p>Install NoMercy as an app on your device for the best gaming community experience!</p>
+                <div class="install-features">
+                    <div class="install-feature">
+                        <span>⚡</span>
+                        <span>Lightning fast performance</span>
+                    </div>
+                    <div class="install-feature">
+                        <span>📱</span>
+                        <span>Works offline</span>
+                    </div>
+                    <div class="install-feature">
+                        <span>🔔</span>
+                        <span>Push notifications</span>
+                    </div>
+                </div>
+            </div>
+            <div class="install-modal-footer">
+                <button class="btn btn-secondary" id="cancelInstallBtn">Maybe Later</button>
+                <button class="btn btn-primary" id="confirmInstallBtn">Install Now</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

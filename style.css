@@ -264,3 +264,352 @@ body {
 .install-prompt.show {
     animation: slideInUp 0.5s ease-out;
 }
+
+/* ... kode CSS sebelumnya tetap sama, tambahkan ini di bagian bawah ... */
+
+/* Install Banner */
+.install-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #ff6b35, #f093fb);
+    color: white;
+    z-index: 1001;
+    padding: 1rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.install-banner.show {
+    transform: translateY(0);
+}
+
+.install-banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.install-banner-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.install-banner-icon {
+    font-size: 2rem;
+}
+
+.install-banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.install-banner-text strong {
+    font-size: 1.1rem;
+}
+
+.install-banner-text span:last-child {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.install-banner-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.install-banner-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.install-banner-btn:hover {
+    background: white;
+    color: #ff6b35;
+}
+
+.install-banner-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.install-banner-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Install Button di Navbar */
+.install-nav-btn {
+    background: #38a169;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.install-nav-btn:hover {
+    background: #2f855a;
+    transform: translateY(-2px);
+}
+
+/* Install Card di Hero Section */
+.install-section {
+    margin-top: 2rem;
+}
+
+.install-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.install-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.install-card-icon {
+    font-size: 2rem;
+}
+
+.install-card-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.install-card-desc {
+    color: #a0aec0;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.btn-install {
+    background: linear-gradient(135deg, #38a169, #2f855a);
+    color: white;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-install:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(56, 161, 105, 0.3);
+}
+
+/* Floating Install Button */
+.floating-install-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, #ff6b35, #f093fb);
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+.floating-install-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
+}
+
+.floating-install-icon {
+    font-size: 1.2rem;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3); }
+    50% { box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6); }
+    100% { box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3); }
+}
+
+/* Install Modal */
+.install-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.install-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.install-modal-content {
+    position: relative;
+    background: #2d3748;
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.install-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.install-modal-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.install-modal-close {
+    background: none;
+    border: none;
+    color: #a0aec0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.install-modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.install-modal-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.install-modal-body p {
+    color: #a0aec0;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.install-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.install-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.install-feature span:first-child {
+    font-size: 1.5rem;
+}
+
+.install-modal-footer {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.install-modal-footer .btn {
+    flex: 1;
+    justify-content: center;
+}
+
+/* Responsive untuk Install Elements */
+@media (max-width: 768px) {
+    .install-banner-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .install-nav-btn {
+        display: none; /* Sembunyikan di mobile karena ada floating button */
+    }
+    
+    .floating-install-btn {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.75rem 1.25rem;
+    }
+    
+    .install-modal-content {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .install-modal-footer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-install-text {
+        display: none;
+    }
+    
+    .floating-install-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        padding: 0;
+        justify-content: center;
+    }
+}
