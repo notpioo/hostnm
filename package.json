@@ -7,7 +7,12 @@
         "start": "node server.js",
         "dev": "node server.js"
     },
-    "keywords": ["gaming", "community", "pwa", "nodejs"],
+    "keywords": [
+        "gaming",
+        "community",
+        "pwa",
+        "nodejs"
+    ],
     "author": "Your Name",
     "license": "MIT",
     "dependencies": {

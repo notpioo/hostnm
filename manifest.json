@@ -1,34 +1,80 @@
+
 {
-    "name": "NoMercy Gaming Community",
-    "short_name": "NoMercy",
-    "description": "Join the ultimate gaming community. Connect with fellow gamers, share strategies, and dominate together.",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#1a202c",
-    "theme_color": "#ff6b35",
-    "orientation": "portrait-primary",
-    "categories": ["gaming", "social", "entertainment"],
-    "lang": "id",
-    "icons": [
+  "name": "NoMercy Gaming Community",
+  "short_name": "NoMercy",
+  "description": "Join the ultimate gaming community. Connect with fellow gamers, share strategies, and dominate together.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a202c",
+  "theme_color": "#ff6b35",
+  "orientation": "portrait-primary",
+  "categories": ["games", "social", "entertainment"],
+  "lang": "id",
+  "dir": "ltr",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23ff6b35'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='40' fill='white'%3E🎮%3C/text%3E%3C/svg%3E",
+      "sizes": "72x72",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23ff6b35'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='40' fill='white'%3E🎮%3C/text%3E%3C/svg%3E",
+      "sizes": "96x96",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23ff6b35'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='40' fill='white'%3E🎮%3C/text%3E%3C/svg%3E",
+      "sizes": "128x128",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23ff6b35'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='40' fill='white'%3E🎮%3C/text%3E%3C/svg%3E",
+      "sizes": "144x144",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23ff6b35'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='40' fill='white'%3E🎮%3C/text%3E%3C/svg%3E",
+      "sizes": "152x152",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23ff6b35'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='40' fill='white'%3E🎮%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23ff6b35'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='40' fill='white'%3E🎮%3C/text%3E%3C/svg%3E",
+      "sizes": "384x384",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23ff6b35'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='40' fill='white'%3E🎮%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Join Community",
+      "short_name": "Join",
+      "description": "Join the gaming community",
+      "url": "/?action=join",
+      "icons": [
         {
-            "src": "icons/icon-192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any maskable"
-        },
-        {
-            "src": "icons/icon-512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "any maskable"
+          "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='40'%3E👥%3C/text%3E%3C/svg%3E",
+          "sizes": "96x96"
         }
-    ],
-    "screenshots": [
-        {
-            "src": "icons/icon-512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "form_factor": "wide"
-        }
-    ]
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 600'%3E%3Crect width='300' height='600' fill='%231a202c'/%3E%3Ctext x='150' y='300' text-anchor='middle' font-size='60' fill='%23ff6b35'%3ENoMercy%3C/text%3E%3C/svg%3E",
+      "sizes": "300x600",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ]
 }
