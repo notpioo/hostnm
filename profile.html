@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Profile - NoMercy Gaming</title>
+    <meta name="description" content="NoMercy Gaming Profile">
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a202c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">NoMercy</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav">
+                <div class="top-nav-menu">
+                    <button class="top-nav-item" data-page="dashboard">
+                        <span class="nav-icon">▣</span>
+                        <span class="nav-text">Dashboard</span>
+                    </button>
+                    <button class="top-nav-item" data-page="social">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">Sosial</span>
+                    </button>
+                    <button class="top-nav-item" data-page="division">
+                        <span class="nav-icon">🏆</span>
+                        <span class="nav-text">Divisi</span>
+                    </button>
+                    <div class="top-nav-dropdown">
+                        <button class="top-nav-item dropdown-trigger" id="moreMenuBtn">
+                            <span class="nav-icon">⋯</span>
+                            <span class="nav-text">More</span>
+                            <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="top-nav-dropdown-menu" id="moreDropdown">
+                            <button class="nav-dropdown-item" data-page="tournament">
+                                <span class="nav-icon">🎯</span>
+                                <span class="nav-text">Tournament</span>
+                            </button>
+                            <button class="nav-dropdown-item" data-page="leaderboard">
+                                <span class="nav-icon">📊</span>
+                                <span class="nav-text">Leaderboard</span>
+                            </button>
+                            <button class="nav-dropdown-item" data-page="store">
+                                <span class="nav-icon">🛒</span>
+                                <span class="nav-text">Store</span>
+                            </button>
+                            <button class="nav-dropdown-item" data-page="settings">
+                                <span class="nav-icon">⚙️</span>
+                                <span class="nav-text">Settings</span>
+                            </button>
+                            <button class="nav-dropdown-item" data-page="help">
+                                <span class="nav-icon">❓</span>
+                                <span class="nav-text">Help</span>
+                            </button>
+                            <button class="nav-dropdown-item admin-only" data-page="admin" style="display: none;">
+                                <span class="nav-icon">👑</span>
+                                <span class="nav-text">Admin</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="desktop-profile">
+                    <button class="desktop-profile-btn" id="desktopProfileBtn">
+                        <span class="user-avatar" id="userAvatar">👤</span>
+                        <span class="user-name" id="userName">Loading...</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="desktop-profile-menu" id="desktopProfileMenu">
+                        <div class="profile-menu-item active" id="desktopProfileMenuItem">
+                            <span class="nav-icon">👤</span>
+                            <span class="nav-text">Profile</span>
+                        </div>
+                        <div class="profile-menu-divider"></div>
+                        <div class="profile-menu-item logout-item" id="desktopLogoutBtn">
+                            <span class="nav-icon">🚪</span>
+                            <span class="nav-text">Logout</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Profile Menu -->
+            <div class="mobile-profile" id="mobileProfile">
+                <button class="mobile-profile-btn" id="mobileProfileBtn">
+                    <span class="user-avatar">👤</span>
+                </button>
+                <div class="mobile-profile-menu" id="mobileProfileMenu">
+                    <div class="profile-menu-item active" id="profileMenuItem">
+                        <span class="nav-icon">👤</span>
+                        <span class="nav-text">Profile</span>
+                    </div>
+                    <div class="profile-menu-divider"></div>
+                    <div class="profile-menu-item logout-item" id="mobileLogoutBtn">
+                        <span class="nav-icon">🚪</span>
+                        <span class="nav-text">Logout</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav">
+        <button class="bottom-nav-item" data-page="dashboard">
+            <span class="bottom-nav-icon">▣</span>
+            <span class="bottom-nav-text">Dashboard</span>
+        </button>
+        <button class="bottom-nav-item" data-page="social">
+            <span class="bottom-nav-icon">👥</span>
+            <span class="bottom-nav-text">Sosial</span>
+        </button>
+        <button class="bottom-nav-item" data-page="division">
+            <span class="bottom-nav-icon">🏆</span>
+            <span class="bottom-nav-text">Divisi</span>
+        </button>
+        <button class="bottom-nav-item" id="moreBottomBtn">
+            <span class="bottom-nav-icon">⋯</span>
+            <span class="bottom-nav-text">More</span>
+        </button>
+    </nav>
+    
+    <!-- Bottom Sheet (Mobile More Menu) -->
+    <div class="bottom-sheet" id="bottomSheet">
+        <div class="bottom-sheet-overlay" id="bottomSheetOverlay"></div>
+        <div class="bottom-sheet-content">
+            <div class="bottom-sheet-header">
+                <h3>Menu</h3>
+                <button class="bottom-sheet-close" id="bottomSheetClose">✕</button>
+            </div>
+            <div class="bottom-sheet-menu">
+                <button class="bottom-sheet-item" data-page="tournament">
+                    <span class="nav-icon">🎯</span>
+                    <span class="nav-text">Tournament</span>
+                </button>
+                <button class="bottom-sheet-item" data-page="leaderboard">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Leaderboard</span>
+                </button>
+                <button class="bottom-sheet-item" data-page="store">
+                    <span class="nav-icon">🛒</span>
+                    <span class="nav-text">Store</span>
+                </button>
+                <button class="bottom-sheet-item" data-page="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Settings</span>
+                </button>
+                <button class="bottom-sheet-item" data-page="help">
+                    <span class="nav-icon">❓</span>
+                    <span class="nav-text">Help</span>
+                </button>
+                <button class="bottom-sheet-item admin-only" data-page="admin" style="display: none;">
+                    <span class="nav-icon">👑</span>
+                    <span class="nav-text">Admin</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Profile -->
+    <main class="profile-main">
+        <div class="profile-container">
+            <!-- Profile Header -->
+            <section class="profile-header">
+                <div class="profile-header-card">
+                    <div class="profile-avatar-section">
+                        <div class="profile-avatar-wrapper">
+                            <div class="profile-avatar" id="profileAvatar">👤</div>
+                            <button class="avatar-edit-btn" id="avatarEditBtn">
+                                <span>📷</span>
+                            </button>
+                        </div>
+                        <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                    </div>
+                    <div class="profile-info">
+                        <h1 id="profileFullName">Loading...</h1>
+                        <p id="profileUsername">@loading</p>
+                        <div class="profile-role-badge" id="profileRoleBadge">Member</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Form -->
+            <section class="profile-form-section">
+                <div class="profile-form-card">
+                    <div class="profile-form-header">
+                        <h2>Edit Profile</h2>
+                        <p>Update your profile information</p>
+                    </div>
+                    
+                    <form id="profileForm" class="profile-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="editFullName">Full Name</label>
+                                <input type="text" id="editFullName" name="fullName" required>
+                                <div class="form-error" id="fullNameError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="editUsername">Username</label>
+                                <input type="text" id="editUsername" name="username" required>
+                                <div class="form-error" id="usernameError"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="editBirthDate">Date of Birth</label>
+                                <input type="date" id="editBirthDate" name="birthDate">
+                                <div class="form-error" id="birthDateError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="editGender">Gender</label>
+                                <select id="editGender" name="gender">
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                    <option value="prefer-not-to-say">Prefer not to say</option>
+                                </select>
+                                <div class="form-error" id="genderError"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editBio">Bio</label>
+                            <textarea id="editBio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+                            <div class="form-error" id="bioError"></div>
+                            <div class="form-hint">Maximum 200 characters</div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" id="cancelBtn">Cancel</button>
+                            <button type="submit" class="btn-primary" id="saveBtn">
+                                <span class="btn-text">Save Changes</span>
+                                <span class="btn-loader" style="display: none;">⏳</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Profile Stats -->
+            <section class="profile-stats-section">
+                <div class="profile-stats-card">
+                    <h3>Profile Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-icon">🎮</span>
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Games Played</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">🏆</span>
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Tournaments Won</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">👥</span>
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Friends</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">⭐</span>
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Firebase -->
+    <script type="module" src="auth-guard.js"></script>
+    <script type="module" src="profile.js"></script>
+</body>
+</html>

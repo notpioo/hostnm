@@ -1,4 +1,4 @@
-modules = ["web", "nodejs-14"]
+modules = ["nodejs-14", "web"]
 run = "npm run dev"
 
 [nix]

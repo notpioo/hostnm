@@ -2,24 +2,26 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>NoMercy - Gaming Community Platform</title>
     <meta name="description" content="Join the ultimate gaming community. Connect with fellow gamers, share strategies, and dominate together.">
-    
+
     <!-- PWA Meta Tags -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1a202c">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="NoMercy">
-    
+
     <!-- Icons -->
     <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
     <link rel="apple-touch-icon" href="icons/icon-192.png">
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -44,13 +46,13 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-icon">🎮</span>
-                <span class="logo-text">NoMercy</span>
-            </div>
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">NoMercy</span>
+        </div>
             <div class="nav-menu">
-                <a href="#" class="nav-link">Home</a>
-                <a href="#" class="nav-link">Login</a>
-                <button class="nav-btn">Join Now</button>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="register.html" class="nav-btn">Join Now</a>
                 <!-- Install button di navbar -->
                 <button class="install-nav-btn" id="installNavBtn" style="display: none;">
                     <span>⬇️</span>
@@ -67,24 +69,24 @@
                 <span class="badge-icon">🎮</span>
                 <span>Gaming Community Platform</span>
             </div>
-            
+
             <h1 class="hero-title">NoMercy</h1>
-            
+
             <p class="hero-description">
                 Join the ultimate gaming community. Connect with fellow gamers, share strategies, and dominate together.
             </p>
-            
+
             <div class="hero-buttons">
-                <button class="btn btn-primary" id="joinCommunityBtn">
+                <a href="register.html" class="btn btn-primary" id="joinCommunityBtn">
                     <span class="btn-icon">👥</span>
                     Join the Community
-                </button>
-                <button class="btn btn-secondary" id="signInBtn">
+                </a>
+                <a href="login.html" class="btn btn-secondary" id="signInBtn">
                     <span class="btn-icon">⚡</span>
                     Sign In
-                </button>
+                </a>
             </div>
-            
+
             <!-- Install section yang lebih prominent -->
             <div class="install-section">
                 <div class="install-card" id="installCard" style="display: none;">
@@ -100,7 +102,7 @@
                         Install Now
                     </button>
                 </div>
-                
+
                 <div class="install-prompt">
                     <span class="install-icon">📱</span>
                     <span>Available on all platforms - Install as an app!</span>
@@ -126,7 +128,7 @@
             <div class="install-modal-body">
                 <div class="install-modal-icon">🎮</div>
                 <p>Install NoMercy as an app on your device for the best gaming community experience!</p>
-                
+
                 <div class="install-instructions" id="installInstructions">
                     <div class="install-instruction android-instruction">
                         <h4>📱 Android (Chrome/Edge)</h4>
@@ -134,14 +136,14 @@
                         <p>2. Select "Add to Home screen" or "Install app"</p>
                         <p>3. Tap "Install" when prompted</p>
                     </div>
-                    
+
                     <div class="install-instruction ios-instruction">
                         <h4>🍎 iPhone/iPad (Safari)</h4>
                         <p>1. Tap the Share button (📤)</p>
                         <p>2. Scroll and tap "Add to Home Screen"</p>
                         <p>3. Tap "Add" to install</p>
                     </div>
-                    
+
                     <div class="install-instruction desktop-instruction">
                         <h4>💻 Desktop (Chrome/Edge)</h4>
                         <p>1. Look for the install icon (⬇️) in the address bar</p>
@@ -149,7 +151,7 @@
                         <p>3. Click "Install" when prompted</p>
                     </div>
                 </div>
-                
+
                 <div class="install-features">
                     <div class="install-feature">
                         <span>⚡</span>

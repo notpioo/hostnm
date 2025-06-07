@@ -34,9 +34,17 @@ if ('serviceWorker' in navigator) {
 // Check if app is already installed
 function isAppAlreadyInstalled() {
     // Check if running as PWA
-    return window.matchMedia('(display-mode: standalone)').matches || 
-           window.navigator.standalone === true ||
-           localStorage.getItem('appInstalled') === 'true';
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+    const isIOSStandalone = window.navigator.standalone === true;
+    const isMarkedInstalled = localStorage.getItem('appInstalled') === 'true';
+    
+    console.log('Checking installation status:', {
+        isStandalone,
+        isIOSStandalone,
+        isMarkedInstalled
+    });
+    
+    return isStandalone || isIOSStandalone || isMarkedInstalled;
 }
 
 // Detect mobile devices
@@ -213,11 +221,17 @@ window.addEventListener('appinstalled', (evt) => {
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, initializing PWA install');
-    
+    checkAndUpdateInstallStatus();
+});
+
+// Function to check and update install status
+function checkAndUpdateInstallStatus() {
     if (isAppAlreadyInstalled()) {
         console.log('App already installed, hiding install elements');
         hideInstallElements();
         isAppInstalled = true;
+        // Stop all intervals and observers
+        clearInstallMonitoring();
     } else {
         console.log('App not installed, showing install elements');
         // Always show install elements - don't wait for beforeinstallprompt
@@ -225,16 +239,32 @@ document.addEventListener('DOMContentLoaded', () => {
             showInstallElements();
         }, 1000);
     }
-});
+}
 
-// Existing button event listeners
-document.getElementById('joinCommunityBtn').addEventListener('click', () => {
-    alert('Welcome to NoMercy Gaming Community! 🎮');
-});
+// Check for installation status changes
+function monitorInstallationStatus() {
+    // Check every 3 seconds for installation status
+    setInterval(() => {
+        if (isAppAlreadyInstalled() && !isAppInstalled) {
+            console.log('App installation detected, hiding elements');
+            hideInstallElements();
+            isAppInstalled = true;
+            clearInstallMonitoring();
+        }
+    }, 3000);
+}
 
-document.getElementById('signInBtn').addEventListener('click', () => {
-    alert('Sign in feature coming soon! ⚡');
-});
+// Clear all monitoring intervafunction clearInstallMonitoring() {
+    // Clear the aggressive floating button intervals
+    const intervals = window.installIntervals || [];
+    intervals.forEach(interval => clearInterval(interval));
+    window.installIntervals = [];
+}
+
+// Stop all aggressive install prompts
+clearInstallMonitoring();
+
+// Navigation is now handled by href links in HTML
 
 // Smooth scrolling animation
 document.addEventListener('DOMContentLoaded', () => {
@@ -260,6 +290,16 @@ window.addEventListener('offline', () => {
     console.log('App is offline');
 });
 
+// Handle visibility changes (useful for PWA detection)
+document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+        // Page became visible, check if app was installed
+        setTimeout(() => {
+            checkAndUpdateInstallStatus();
+        }, 500);
+    }
+});
+
 // Keyboard shortcuts
 document.addEventListener('keydown', (e) => {
     // Ctrl/Cmd + I untuk install
@@ -276,6 +316,7 @@ document.addEventListener('keydown', (e) => {
 
 // Force show floating button immediately and aggressively
 function forceShowFloatingButton() {
+    // Always check current install status first
     if (!isAppAlreadyInstalled() && floatingInstallBtn) {
         floatingInstallBtn.style.setProperty('display', 'flex', 'important');
         floatingInstallBtn.style.setProperty('visibility', 'visible', 'important');
@@ -286,6 +327,10 @@ function forceShowFloatingButton() {
         floatingInstallBtn.style.setProperty('z-index', '9999', 'important');
         console.log('Floating button FORCED to show with !important');
         return true;
+    } else if (isAppAlreadyInstalled() && floatingInstallBtn) {
+        floatingInstallBtn.style.setProperty('display', 'none', 'important');
+        console.log('App installed - hiding floating button');
+        return false;
     }
     return false;
 }
@@ -306,12 +351,26 @@ setTimeout(() => {
     forceShowFloatingButton();
 }, 2000);
 
+// Store intervals for cleanup
+window.installIntervals = [];
+
 // Continuous monitoring every 2 seconds
-setInterval(() => {
+const monitoringInterval = setInterval(() => {
+    if (isAppAlreadyInstalled()) {
+        hideInstallElements();
+        clearInstallMonitoring();
+        return;
+    }
+    
     if (forceShowFloatingButton()) {
         console.log('Floating button maintained via interval');
     }
 }, 2000);
+
+window.installIntervals.push(monitoringInterval);
+
+// Start monitoring installation status
+monitorInstallationStatus();
 
 // Observer untuk memantau perubahan DOM
 if (floatingInstallBtn) {
